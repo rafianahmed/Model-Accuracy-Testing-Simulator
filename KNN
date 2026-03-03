@@ -1,0 +1,13 @@
+function knnRegression(X, y, k = 5) {
+    return function(x) {
+        let distances = X.map((xi, i) => ({
+            dist: Math.abs(xi - x),
+            value: y[i]
+        }));
+
+        distances.sort((a,b)=>a.dist-b.dist);
+        const neighbors = distances.slice(0, k);
+
+        return neighbors.reduce((sum, obj)=>sum+obj.value, 0) / k;
+    }
+}
