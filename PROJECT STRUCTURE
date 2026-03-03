@@ -1,0 +1,9 @@
+model-accuracy-simulator/
+│
+├── index.html
+├── style.css
+├── main.js
+├── metrics.js
+├── models.js
+├── utils.js
+└── README.md
