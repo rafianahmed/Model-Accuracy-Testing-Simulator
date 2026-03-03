@@ -6,18 +6,28 @@
 </head>
 <body>
 
-<h1>📊 Model Accuracy Testing Simulator</h1>
+<h1>📊 Model Accuracy Testing Simulator (MSE)</h1>
 
-<input type="file" id="fileInput" />
-<button onclick="runSimulation()">Run Models</button>
+<p>Upload a CSV with headers. Then select the target column (y). All other numeric columns become features (X).</p>
+
+<input type="file" id="fileInput" accept=".csv" />
+<div style="margin-top:10px;">
+  <label>Target (y): </label>
+  <select id="targetSelect" disabled></select>
+  <button id="runBtn" onclick="runSimulation()" disabled>Run Models</button>
+</div>
 
 <h2>Results</h2>
 <div id="results"></div>
 
 <canvas id="chart"></canvas>
 
+<!-- Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjs@11.11.2/lib/browser/math.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="utils.js"></script>
+
+<!-- Your code -->
 <script src="metrics.js"></script>
 <script src="models.js"></script>
 <script src="main.js"></script>
